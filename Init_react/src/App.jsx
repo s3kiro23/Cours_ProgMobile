@@ -9,7 +9,8 @@ const App = () => {
     }
 
     return (
-        <MainLayout title={"Mon Header"}>
+        <MainLayout title={"Mon Header"}
+                    style={{background: "lightblue"}}>
             <h1>{toto}</h1>
             <p>{myfunction()}</p>
             <FirstApp initValue={5} placeHolder={"Entrez un nombre"}/>
