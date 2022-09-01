@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RDV Aflokkat</string>
+    <string-array name="Conseillers">
+        <item>Ludovic</item>
+        <item>Sylvain</item>
+        <item>Jessica</item>
+        <item>Laetitia</item>
+        <item>Benjamin</item>
+    </string-array>
+</resources>

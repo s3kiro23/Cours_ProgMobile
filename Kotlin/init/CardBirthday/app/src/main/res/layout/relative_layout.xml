@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:text="HB, ma couille"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="FROM Huhu"
+        android:textColor="@color/black"
+        android:textAlignment="textEnd"
+        android:textSize="30dp"
+        android:translationY="600dp" />
+    android:layout_gravity="end" />
+</RelativeLayout>
