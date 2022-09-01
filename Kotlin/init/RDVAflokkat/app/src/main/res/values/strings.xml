@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">RDV Aflokkat</string>
+    <string name="conseiller">Conseiller</string>
+    <string name="switchBtn">Déjà étudiant</string>
+    <string name="RDV">Réserver votre rendez-vous</string>
+    <string name="r_server">Réserver !</string>
+    <string name="le">Le</string>
+    <string name="ludovic">Ludovic</string>
+    <string name="date">Choisissez une date</string>
     <string-array name="Conseillers">
         <item>Ludovic</item>
         <item>Sylvain</item>
