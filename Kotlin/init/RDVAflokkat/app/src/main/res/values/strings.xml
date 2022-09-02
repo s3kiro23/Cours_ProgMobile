@@ -6,12 +6,14 @@
     <string name="r_server">Réserver !</string>
     <string name="le">Le</string>
     <string name="ludovic">Ludovic</string>
-    <string name="date">Choisissez une date</string>
-    <string-array name="Conseillers">
+    <string-array name="conseillers">
         <item>Ludovic</item>
         <item>Sylvain</item>
         <item>Jessica</item>
         <item>Laetitia</item>
         <item>Benjamin</item>
     </string-array>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="date">__ / __ / __</string>
+    <string name="cal">cal</string>
 </resources>

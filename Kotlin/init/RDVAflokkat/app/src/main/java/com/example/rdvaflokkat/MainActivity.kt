@@ -1,41 +1,41 @@
 package com.example.rdvaflokkat
 
 import android.app.DatePickerDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.ImageButton
+import android.widget.Spinner
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    private val list: MutableList<String> = mutableListOf()
+    private lateinit var spinner: Spinner
+    private lateinit var adapter: ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val spinner: Spinner = findViewById(R.id.spinner)
-        val selection = "Ludovic"
         val cal = Calendar.getInstance()
-        val editTextDate: EditText = findViewById(R.id.editTextDate)
-
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.Conseillers,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
+        val editTextDate: TextView = findViewById(R.id.editTextDate)
+        val btnCalendar: ImageButton = findViewById(R.id.calendar)
+        spinner = findViewById(R.id.spinner)
+        lifecycleScope.launch {
+            val conseillers = AfflokatAPI.retrofitService.getConseillers()
+            adapter = ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, conseillers)
             spinner.adapter = adapter
-            spinner.setSelection(1);
-
         }
 
         fun updateDateInView() {
             val myFormat = "dd/MM/yyyy"
             val sdf = SimpleDateFormat(myFormat, Locale.FRENCH)
-            editTextDate.hint = sdf.format(cal.time)
+            editTextDate.text = sdf.format(cal.time)
         }
 
         val dateSetListener =
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 updateDateInView()
             }
 
-        editTextDate.setOnClickListener {
+        btnCalendar.setOnClickListener {
             DatePickerDialog(
                 this@MainActivity,
                 dateSetListener,
@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
                 cal.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
-
         supportActionBar?.title = "RDV Aflokkat"
     }
 
