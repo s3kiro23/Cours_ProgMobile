@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
@@ -14,10 +15,12 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val list: MutableList<String> = mutableListOf()
     private lateinit var spinner: Spinner
     private lateinit var adapter: ArrayAdapter<String>
-
+    val listString = arrayListOf<String>()
+    private val userViewModel: UserViewModel by viewModels {
+        UserViewModelFactory(AdvisorRepository(AflokkatAPI2.retrofitService2))
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,11 +29,19 @@ class MainActivity : AppCompatActivity() {
         val editTextDate: TextView = findViewById(R.id.editTextDate)
         val btnCalendar: ImageButton = findViewById(R.id.calendar)
         spinner = findViewById(R.id.spinner)
-        lifecycleScope.launch {
-            val conseillers = AfflokatAPI.retrofitService.getConseillers()
-            adapter = ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, conseillers)
-            spinner.adapter = adapter
+        adapter = ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, listString)
+        userViewModel.getAdvisor.observe(this){
+            it.let {
+                listString.clear()
+                for(advisor in it){
+                    listString.add("${advisor.prenom} ${advisor.nom} (${advisor.fonction})")
+                }
+                adapter.notifyDataSetChanged()
+            }
         }
+
+
+        spinner.adapter = adapter
 
         fun updateDateInView() {
             val myFormat = "dd/MM/yyyy"
