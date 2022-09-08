@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="Theme.AflokkatGarden" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/greenAccent</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green</item>
+        <item name="colorAccent">@color/greenAccent</item>
+        <item name="background">@color/green</item>
+    </style>
+
+    <style name="Theme.AflokkatGarden.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AflokkatGarden.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/TitleTextAppearance</item>
+    </style>
+
+    <style name="TitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontWeight">700</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Theme.AflokkatGarden.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AflokkatGarden.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
+</resources>

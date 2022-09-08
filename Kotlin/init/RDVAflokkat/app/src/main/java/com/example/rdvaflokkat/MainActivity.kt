@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: ArrayAdapter<String>
     val listString = arrayListOf<String>()
     private val userViewModel: UserViewModel by viewModels {
-        UserViewModelFactory(AdvisorRepository(AflokkatAPI2.retrofitService2))
+        UserViewModelFactory(AdvisorRepository())
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
             }
         }
-
 
         spinner.adapter = adapter
 

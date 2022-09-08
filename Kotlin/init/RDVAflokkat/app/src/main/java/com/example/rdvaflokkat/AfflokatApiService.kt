@@ -32,7 +32,7 @@ object AfflokatAPI {
 
 interface AflokkatAPIService2 {
     @GET("fe064751-1f68-4e6a-be28-85c8b8ad23d7")
-     fun getAdvisor(): Flow<List<Advisor>>
+    suspend fun getAdvisor(): List<Advisor>
 }
 
 object AflokkatAPI2 {
