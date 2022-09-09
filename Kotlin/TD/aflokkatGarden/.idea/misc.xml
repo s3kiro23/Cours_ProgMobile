@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/www/Cours_ProgMobile/Kotlin/TD/aflokkatGarden/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/www/Cours_ProgMobile/Kotlin/TD/aflokkatGarden/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/www/Cours_ProgMobile/Kotlin/TD/aflokkatGarden/app/src/main/res/layout/listplants_layout.xml" value="0.1" />
         <entry key="..\:/www/Cours_ProgMobile/Kotlin/TD/aflokkatGarden/app/src/main/res/layout/mygarden_layout.xml" value="0.1" />
-        <entry key="..\:/www/Cours_ProgMobile/Kotlin/TD/aflokkatGarden/app/src/main/res/layout/myplant_layout.xml" value="0.1838768115942029" />
+        <entry key="..\:/www/Cours_ProgMobile/Kotlin/TD/aflokkatGarden/app/src/main/res/layout/myplant_layout.xml" value="0.12121212121212122" />
         <entry key="..\:/www/Cours_ProgMobile/Kotlin/TD/aflokkatGarden/app/src/main/res/layout/plant_layout.xml" value="0.1" />
+        <entry key="..\:/www/Cours_ProgMobile/Kotlin/TD/aflokkatGarden/app/src/main/res/layout/plant_row.xml" value="0.1" />
       </map>
     </option>
   </component>

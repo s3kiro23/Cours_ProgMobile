@@ -2,5 +2,10 @@
     <string name="app_name">Jardin d\'Aflokkat</string>
     <string name="mygarden">Mon Jardin Fragment</string>
     <string name="listplants">Liste des plantes Fragment</string>
-    <string name="myplant">Ma plante Fragment</string>
+    <string name="desc_plant">Plantes</string>
+    <string name="title_card_plant">BourgainVilea</string>
+    <string name="title_planted">Plantée</string>
+    <string name="planted">Sep 5, 2022</string>
+    <string name="title_watered">Plantée</string>
+    <string name="last_watered">Sep 5, 2022 à arroser dans 21 jours.</string>
 </resources>

@@ -11,7 +11,7 @@ class PlantFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(
-            R.layout.mygarden_layout, container, false
+            R.layout.myplant_layout, container, false
         )
     }
 }
