@@ -1,17 +1,20 @@
-package com.example.aflokkatgarden
+package com.example.aflokkatgarden.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = [Plant::class], version = 1, exportSchema = false)
-public abstract class GardenDataBase : RoomDatabase() {
+@Database(entities = [GardenPlanting::class ,Plant::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
+public abstract class AppDataBase : RoomDatabase() {
 
     abstract fun gardenDao(): GardenDao
+    abstract fun plantDao(): PlantDao
 
     private class GardenDatabaseCallback(
         private val scope: CoroutineScope
@@ -43,16 +46,16 @@ public abstract class GardenDataBase : RoomDatabase() {
 
     companion object {
         @Volatile
-        private var INSTANCE: GardenDataBase? = null
+        private var INSTANCE: AppDataBase? = null
 
         fun getDatabase(
             context: Context,
             scope: CoroutineScope
-        ) : GardenDataBase {
+        ) : AppDataBase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    GardenDataBase::class.java,
+                    AppDataBase::class.java,
                     "garden_database"
                 )
                     .addCallback(GardenDatabaseCallback(scope))

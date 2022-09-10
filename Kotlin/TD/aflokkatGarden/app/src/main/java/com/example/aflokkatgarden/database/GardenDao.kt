@@ -1,4 +1,4 @@
-package com.example.aflokkatgarden
+package com.example.aflokkatgarden.database
 
 import androidx.room.Dao
 import androidx.room.Insert

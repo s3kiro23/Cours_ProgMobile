@@ -1,6 +1,8 @@
-package com.example.aflokkatgarden
+package com.example.aflokkatgarden.viewmodels
 
 import androidx.lifecycle.*
+import com.example.aflokkatgarden.database.GardenRepository
+import com.example.aflokkatgarden.database.Plant
 import kotlinx.coroutines.launch
 
 class GardenViewModel(private val repository: GardenRepository) : ViewModel() {

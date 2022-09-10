@@ -1,4 +1,4 @@
-package com.example.aflokkatgarden
+package com.example.aflokkatgarden.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
